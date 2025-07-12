@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5264",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "Host=localhost;Port=5432;Database=Template;Username=template_api;Password=#Template123",
+        "API_SECRET": "J1BkLQvi03rRqcCAcuE1ELwQUMDgd8kJIe15hwRjFu5Z41gLhRS3O9aISfEab8Htsh7O4RIBKdNjoNBBM2egDJ3ghxXgMi9RoupHnx0amoZl4WMvm4DnrG09HLVUgm5A",
+        "API_KEY": "S3ixuoILVxU8p08nRb5uyh6M4XDDVeryq1c2y54ZiKgdqCpv7S0OsWkJmNszyQ1PSvCpx5mcM3g4vglfrAFScmNANSXJexLWas1faFYeprvbGViCG72jIIrhE6OPyXig",
+        "EMAIL_PASSWORD": "0Bm4EtcekEA8",
+        "STRIPE_SECRET_KEY": "sk_XXXXXXXX",
+        "STRIPE_PUBLISHABLE_KEY": "pk_XXXXXXXX"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7169;http://localhost:5264",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "Host=localhost;Port=5432;Database=Sasquat;Username=sasquat_api;Password=Situ4.%5up1",
+        "API_SECRET": "J1BkLQvi03rRqcCAcuE1ELwQUMDgd8kJIe15hwRjFu5Z41gLhRS3O9aISfEab8Htsh7O4RIBKdNjoNBBM2egDJ3ghxXgMi9RoupHnx0amoZl4WMvm4DnrG09HLVUgm5A",
+        "API_KEY": "S3ixuoILVxU8p08nRb5uyh6M4XDDVeryq1c2y54ZiKgdqCpv7S0OsWkJmNszyQ1PSvCpx5mcM3g4vglfrAFScmNANSXJexLWas1faFYeprvbGViCG72jIIrhE6OPyXig",
+        "EMAIL_PASSWORD": "0Bm4EtcekEA8",
+        "STRIPE_SECRET_KEY": "sk_XXXXXXXX",
+        "STRIPE_PUBLISHABLE_KEY": "pk_XXXXXXXX"
+      }
+    }
+  }
+}

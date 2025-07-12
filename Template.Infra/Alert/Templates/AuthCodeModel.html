@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Auth Code</title>
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f4f4f4;
+            color: #090d17;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border: 2px solid #efc95b;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .mascot {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mascot img {
+            width: 80px;
+            height: auto;
+        }
+
+        .header {
+            text-align: center;
+            color: #1a3f5b;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .code-box {
+            background-color: #fdf6e3;
+            border: 2px dashed #efc95b;
+            border-radius: 12px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a3f5b;
+            padding: 20px;
+            margin: 30px auto;
+            width: fit-content;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🔐 Your Auth Code Has Arrived!</h1>
+    </div>
+    <div class="message">
+        <p>Hey there,</p>
+        <p>Your authentication code is below. Use it to continue your process in the platform.</p>
+        <div class="code-box">
+            {{authCode}}
+        </div>
+        <p>This code is valid for a limited time and should not be shared with anyone.</p>
+    </div>
+    <div class="footer">
+        <p>Problems? Reach us at <a href="mailto:support@email.io">support@email.io</a></p>
+    </div>
+</div>
+</body>
+</html>

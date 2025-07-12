@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <style>
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: #f4f4f4;
+            color: #090d17;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border: 2px solid #efc95b;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .mascot {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mascot img {
+            width: 80px;
+            height: auto;
+        }
+
+        .header {
+            text-align: center;
+            color: #1a3f5b;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 24px;
+        }
+
+        .cta-wrapper {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #efc95b;
+            color: #090d17;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e0b947;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🌟 Welcome to the platform!</h1>
+    </div>
+    <div class="message">
+        <p>Hey there,</p>
+        <p>We're excited to have you on board! Your account has been created successfully, and you're just one step away from getting started.</p>
+        <p>To activate your account, please follow the link below:</p>
+        <p>Click <a href="{{paymentUrl}}" style="color:#1a3f5b; font-weight:bold;">here</a> if the link doesn't work.</p>
+
+        <div class="cta-wrapper">
+            <a href="{{paymentUrl}}" class="cta-button">Pay</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Problems? Reach us at <a href="mailto:support@email.io">support@email.io</a></p>
+    </div>
+</div>
+</body>
+</html>
