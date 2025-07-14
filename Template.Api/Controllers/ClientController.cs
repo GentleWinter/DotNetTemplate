@@ -66,7 +66,7 @@ public class ClientController(ClientService clientService)
 
 
         [HttpPut("InactivateClient")]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public IActionResult InactivateClient([FromBody] string clientEmail)
         {
             try
@@ -85,7 +85,7 @@ public class ClientController(ClientService clientService)
         }
 
         [HttpPut("ActivateClient")]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public IActionResult ActivateClient([FromBody] string clientEmail)
         {
             try

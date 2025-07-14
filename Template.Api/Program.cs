@@ -32,7 +32,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
-var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("API_SECRET") ?? throw new ArgumentException("ApiSecret"));
+var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("API_KEY") ?? throw new ArgumentException("ApiKey"));
 
 builder.Services.AddAuthentication(options =>
 {

@@ -21,16 +21,14 @@ public class ApiKeyMiddleware(RequestDelegate next, IHostingEnvironment env)
         var path = context.Request.Path;
         var isLocalRequest = context.Connection.RemoteIpAddress is { } ip &&
                              (IPAddress.IsLoopback(ip) || ip.ToString() == "::1");
-        
+
         if (context.Request.Method.Equals("OPTIONS", StringComparison.OrdinalIgnoreCase))
         {
             context.Response.StatusCode = StatusCodes.Status204NoContent;
             return;
         }
 
-        if (path.StartsWithSegments("/api/stripe/webhook", StringComparison.OrdinalIgnoreCase) ||
-            (path.StartsWithSegments("/swagger") && _env.IsDevelopment()) ||
-            isLocalRequest)
+        if (path.StartsWithSegments("/api/stripe/webhook", StringComparison.OrdinalIgnoreCase))
         {
             await _next(context);
             return;
