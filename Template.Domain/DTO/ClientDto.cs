@@ -4,7 +4,7 @@ namespace Template.Domain.DTO;
 
 public class ClientDto
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public required string Name { get; set; }
     public required AuthInfo AuthInfo { get; set; }
     public Roles Role { get; set; }

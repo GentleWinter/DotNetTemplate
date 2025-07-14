@@ -51,7 +51,7 @@ public class ClientRepository : IClientRepository
     public Client Update(Client client)
         => _dbSet.Update(client).Entity!;
 
-    public async Task<Client?> GetById(int id) 
+    public async Task<Client?> GetById(Guid id) 
         => await _dbSet.FirstOrDefaultAsync(c => c.Id == id);
     
     public async Task SaveChanges() 

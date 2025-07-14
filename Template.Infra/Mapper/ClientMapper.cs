@@ -27,14 +27,11 @@ internal class ClientMapper : IEntityTypeConfiguration<Client>
         builder.Property(x => x.Plan)
             .HasColumnName("Plan");
         
-        builder.Property(x => x.AuthInfo)
-            .HasConversion(
-                v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
-                v => JsonSerializer.Deserialize<AuthInfo>(v, (JsonSerializerOptions)null))
-            .HasColumnName("AuthInfos")
-            .IsRequired();
+        builder.Property(x => x.Email).HasColumnName("Email").IsRequired();
+        builder.Property(x => x.Password).HasColumnName("Password").IsRequired();
 
-        builder.HasIndex(x => x.AuthInfo.Email, "Index_AuthEmail")
+        builder.HasIndex(x => x.Email)
+            .HasDatabaseName("Index_AuthEmail")
             .IsUnique();
 
         builder.Property(x => x.IsActive)

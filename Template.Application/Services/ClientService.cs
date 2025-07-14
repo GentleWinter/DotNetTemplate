@@ -20,13 +20,13 @@ public class ClientService (IClientRepository _clientRepository, IMapper _mapper
         
         await _emailAlert.OnboardingAlertAsync(clientEntity.AuthInfo.Email, checkoutUrl);
         
-        return _mapper.Map<CreateClientDto>(result);
+        return Result.Ok(_mapper.Map<CreateClientDto>(result));
     }
 
-    public async Task<Result<ClientDto>> GetClient(int id)
+    public async Task<Result<ClientDto>> GetClient(Guid id)
     {
         var result = await _clientRepository.GetById(id);
-        return _mapper.Map<ClientDto>(result);
+        return Result.Ok(_mapper.Map<ClientDto>(result));
     }
 
     public Result<ClientDto> UpdateClient(ClientDto client)
@@ -38,7 +38,7 @@ public class ClientService (IClientRepository _clientRepository, IMapper _mapper
         var result = _clientRepository.Update(clientEntity);
         _clientRepository.SaveChanges();
         
-        return _mapper.Map<ClientDto>(result);
+        return Result.Ok(_mapper.Map<ClientDto>(result));
     }
 
     public Result<ClientDto> InactivateClient(string email)
@@ -54,7 +54,7 @@ public class ClientService (IClientRepository _clientRepository, IMapper _mapper
         var result = _clientRepository.Update(clientEntity);
         _clientRepository.SaveChanges();
         
-        return _mapper.Map<ClientDto>(result);
+        return Result.Ok(_mapper.Map<ClientDto>(result));
     }
     
     public Result<ClientDto> ActivateClient(string email)
@@ -70,7 +70,7 @@ public class ClientService (IClientRepository _clientRepository, IMapper _mapper
         var result = _clientRepository.Update(clientEntity);
         _clientRepository.SaveChanges();
         
-        return _mapper.Map<ClientDto>(result);
+        return Result.Ok(_mapper.Map<ClientDto>(result));
     }
     
     public async Task<Result<bool>> UpdatePassword(string email, string code, string newPassword)

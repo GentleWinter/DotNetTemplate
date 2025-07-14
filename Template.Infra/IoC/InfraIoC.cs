@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Sasquat.Infra.Alerts;
 using Template.Infra.Contexts;
 using Template.Infra.Data.Repository;
 using Template.Infra.Data.Repository.Interface;
@@ -21,6 +22,7 @@ public static class InfraIoC
 
         services.AddScoped<DbContext, TemplateContext>();
         services.AddScoped<IClientRepository, ClientRepository>();
+        services.AddScoped<EmailAlert>();
         
         return services;
     }

@@ -8,6 +8,6 @@ public interface IClientRepository
     Client Update(Client client);
     Client? SearchClientByAuthInfos(string email, string password);
     Client? SearchClientByAuthEmail(string email);
-    Task<Client?> GetById(int id);
+    Task<Client?> GetById(Guid id);
     Task SaveChanges();
 }
