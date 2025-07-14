@@ -9,6 +9,8 @@ namespace Template.Api.Controllers;
 public class LoginController (LoginService loginService)
     : ControllerBase
 {
+    [HttpPost]
+    [Route("AuthenticateAsync")]
     public async Task<ActionResult<dynamic>> AuthenticateAsync([FromBody] AuthInfo request)
     {
         try

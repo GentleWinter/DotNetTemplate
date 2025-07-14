@@ -11,15 +11,19 @@ public class ClientService (IClientRepository _clientRepository, IMapper _mapper
 {
     public async Task<Result<CreateClientDto>> CreateClient(CreateClientDto client)
     {
+        client.AuthInfo.Password = BCrypt.Net.BCrypt.HashPassword(client.AuthInfo.Password);
         Client clientEntity = _mapper.Map<Client>(client);
-        
+    
+        clientEntity.CreatedAt = DateTime.UtcNow;
+        clientEntity.UpdatedAt = DateTime.UtcNow;
+    
         var result = await _clientRepository.Create(clientEntity);
         await _clientRepository.SaveChanges();
 
         var checkoutUrl = _stripeService.CreateStripeCheckoutSession(client.AuthInfo.Email, clientEntity.Plan);
-        
+
         await _emailAlert.OnboardingAlertAsync(clientEntity.AuthInfo.Email, checkoutUrl);
-        
+
         return Result.Ok(_mapper.Map<CreateClientDto>(result));
     }
 
